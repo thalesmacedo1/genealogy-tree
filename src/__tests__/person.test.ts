@@ -4,7 +4,6 @@ import { connect, close } from './db'
 
 const agent = request.agent(server)
 
-beforeEach(async () => jest.useFakeTimers('legacy'))
 beforeAll(async () => await connect())
 afterAll(async () => await close())
 
