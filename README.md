@@ -13,10 +13,21 @@ Acesse o diretório:\
 `cd genealogy-tree`
 
 ### RODAR API
-Para subir a API e seus auxiliares:\
+Para rodar a API e seus testes:\
 `docker compose up`
 
-
 ## ROTAS
+
 Documentação completa das rotas com exemplos de requisição:
 https://documenter.getpostman.com/view/8896044/Uz5FJw94
+
+| REQUEST | URL               | Descrição                    |
+| ------- | ----------------- | ---------------------------- |
+| GET    | /                  | Obter lista de pessoas       |
+| GET    | /person/:id        | Obter pessoa                 |
+| POST   | /person            | Adicionar pessoa             |
+| PUT    | /person/:id        | Atualizar pessoa             |
+| DELETE | /person/:id        | Excluir pessoa               |
+| POST   | /person/relation/:children/:parent | Adicionar relação |
+| DELETE | /person/relation/:children/:parent | Excluir relação   |
+| GET    | /person/tree/:id   | Obter árvore geneológica    |

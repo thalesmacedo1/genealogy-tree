@@ -9,13 +9,13 @@ export default class PersonModel {
 
 	async GetPerson(id: String) {
 		if (!id.match(/^[0-9a-fA-F]{24}$/)) {
-			return { result: null, err: {error: 'id is not a valid person id'} }
+			return { result: null, err: { error: 'id is not a valid person id' } }
 		}
 
 		const result = await Person.findById(id)
 
 		if (!result) {
-			return { result: null, err: {error: 'person not found'} }
+			return { result: null, err: { error: 'person not found' } }
 		}
 
 		return { result, err: null }
@@ -23,7 +23,7 @@ export default class PersonModel {
 
 	async AddNewPerson(name: String) {
 		if (name == undefined || name == null) {
-			return { result: null, err: {error: 'field name is required'} }
+			return { result: null, err: { error: 'field name is required' } }
 		}
 
 		const newPerson = {
@@ -38,12 +38,12 @@ export default class PersonModel {
 
 	async UpdatePerson(id: String, name: String) {
 		if (!id.match(/^[0-9a-fA-F]{24}$/)) {
-			return { result: null, err: {error: 'id is not a valid person id'} }
+			return { result: null, err: { error: 'id is not a valid person id' } }
 		}
 		const targetPerson = await Person.findById(id)
 
 		if (!targetPerson) {
-			return { result: null, err: {error: 'person not found'} }
+			return { result: null, err: { error: 'person not found' } }
 		}
 
 		targetPerson.name = name;
@@ -55,12 +55,12 @@ export default class PersonModel {
 
 	async DeletePerson(id: String) {
 		if (!id.match(/^[0-9a-fA-F]{24}$/)) {
-			return { result: null, err: {error: 'id is not a valid person id'} }
+			return { result: null, err: { error: 'id is not a valid person id' } }
 		}
 		const person = await Person.findById(id)
 
 		if (!person) {
-			return { result: null, err: {error: 'person not found'} }
+			return { result: null, err: { error: 'person not found' } }
 		}
 
 		const childrenFilter = { parents: id };
@@ -79,12 +79,12 @@ export default class PersonModel {
 
 	async GetGenealogy(id: String) {
 		if (!id.match(/^[0-9a-fA-F]{24}$/)) {
-			return { result: null, err: {error: 'id is not a valid person id'} }
+			return { result: null, err: { error: 'id is not a valid person id' } }
 		}
 		const person = await Person.findById(id)
 
 		if (!person) {
-			return { result: null, err: {error: 'person not found'} }
+			return { result: null, err: { error: 'person not found' } }
 		}
 
 		const treeFilter = [

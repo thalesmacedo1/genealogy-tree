@@ -1,7 +1,7 @@
 server:
-	go run main.go
+	npm run dev
 
 test:
-	go test -cover ./...
+	npm run test
 
 .PHONY: server test
