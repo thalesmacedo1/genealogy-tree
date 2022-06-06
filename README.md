@@ -13,7 +13,7 @@ Acesse o diretório:\
 `cd genealogy-tree`
 
 ### RODAR API
-Para rodar a API e seus testes:\
+Para rodar a API:\
 `docker compose up`
 
 ## ROTAS
