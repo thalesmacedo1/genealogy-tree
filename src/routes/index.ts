@@ -17,6 +17,6 @@ routes.delete('/person/:id', PersonController.DeletePerson); // Excluir pessoa
 routes.post('/person/relation/:children/:parent', RelationController.AddNewRelation); // Adicionar relação
 routes.delete('/person/relation/:children/:parent', RelationController.DeleteRelation); // Excluir relação
 
-routes.get('/person/tree/:id', PersonController.GetGenealogy); // Obter árvore geneológica
+routes.get('/person/:id/tree', PersonController.GetGenealogy); // Obter árvore geneológica
 
 export default routes;

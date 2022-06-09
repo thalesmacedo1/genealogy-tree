@@ -120,27 +120,27 @@ describe('DELETE /person/:id', () => {
     })
 })
 
-describe('GET /person/tree/:id', () => {
+describe('GET /person/:id/tree', () => {
     it('Deve ser capaz de obter a árvore genealógica de uma pessoa', async () => {
         const addUser = await agent
             .post('/person')
             .send({ name: "Thales" })
 
         const response = await agent
-            .get(`/person/tree/${addUser.body._id}`)
+            .get(`/person/${addUser.body._id}/tree`)
 
         expect(response.body._id).toStrictEqual(addUser.body._id);
     })
     it('Dado um id inválido deve retornar erro', async () => {
         const response = await agent
-            .get('/person/tree/:id')
+            .get('/person/:id/tree')
             .send({})
 
         expect(response.body).toStrictEqual({ error: 'id is not a valid person id' })
     })
     it('Dado pessoa não encontrada deve retornar erro', async () => {
         const response = await agent
-            .get('/person/tree/629795ce2d2bbec2a0c22620')
+            .get('/person/629795ce2d2bbec2a0c22620/tree')
             .send({})
 
         expect(response.body).toStrictEqual({ error: 'person not found' })

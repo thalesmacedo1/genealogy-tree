@@ -30,4 +30,4 @@ https://documenter.getpostman.com/view/8896044/Uz5FJw94
 | DELETE | /person/:id        | Excluir pessoa               |
 | POST   | /person/relation/:children/:parent | Adicionar relação |
 | DELETE | /person/relation/:children/:parent | Excluir relação   |
-| GET    | /person/tree/:id   | Obter árvore geneológica    |
+| GET    | /person/:id/tree   | Obter árvore geneológica     |
