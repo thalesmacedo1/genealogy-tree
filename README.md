@@ -16,6 +16,9 @@ Acesse o diretório:\
 Para rodar a API:\
 `docker compose up`
 
+Para rodar os testes:\
+`npm run test`
+
 ## ROTAS
 
 Documentação completa das rotas com exemplos de requisição:
