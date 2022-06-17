@@ -1,8 +1,8 @@
 import request from "supertest"
 import mongoose from 'mongoose'
-import server from "../server"
+import app from "../app"
 
-const agent = request.agent(server)
+const agent = request.agent(app)
 
 beforeEach((done) => {
     mongoose.connect(`${process.env.MONGO_CONNECTION_STRING}/genealogy-tree`,

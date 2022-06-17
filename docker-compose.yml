@@ -6,7 +6,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - './data:/data/db:z'
+      - './data:/data/db'
   application:
     build: .
     tty: true
