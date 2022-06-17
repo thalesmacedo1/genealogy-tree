@@ -1,11 +1,19 @@
 import request from "supertest"
+import mongoose from 'mongoose'
 import server from "../server"
-import { connect, close } from './db'
 
 const agent = request.agent(server)
 
-beforeAll(async () => await connect())
-afterAll(async () => await close())
+beforeEach((done) => {
+    mongoose.connect(`${process.env.MONGO_CONNECTION_STRING}/genealogy-tree`,
+        () => done());
+});
+
+afterEach((done) => {
+    mongoose.connection.db.dropDatabase(() => {
+        mongoose.connection.close(() => done())
+    });
+});
 
 describe('GET /', () => {
     it('Deve ser capaz de obter uma lista de pessoas', async () => {
