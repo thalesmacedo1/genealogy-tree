@@ -12,9 +12,13 @@ Clone o repositório:\
 Acesse o diretório:\
 `cd genealogy-tree`
 
+
+Para subir os containers :\
+`docker compose up -d`
+
 ### RODAR API
 Para rodar a API:\
-`docker compose up`
+`npm run dev`
 
 Para rodar os testes:\
 `npm run test`
