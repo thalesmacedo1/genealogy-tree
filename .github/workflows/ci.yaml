@@ -1,12 +1,12 @@
 name: ci-nodejs-workflow
-on: [push]
+on: [push, pull_request]
 jobs:
-  check-application:
+  tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm install
-      - run: npm run test
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run docker-compose
+        run: docker-compose up -d
+      - name: Run tests
+        run: npm run test
